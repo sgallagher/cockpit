@@ -1,0 +1,55 @@
+<head>
+    <title>Domain Controller</title>
+    <meta charset="utf-8">
+    <link href="../base/cockpit.css" type="text/css" rel="stylesheet">
+    <script src="../base/jquery.js"></script>
+    <script src="../base/cockpit.js"></script>
+    <script src="dc_common.js"></script>
+    <script src="dc_display.js"></script>
+    <script src="dc_deploy.js"></script>
+</head>
+<body>
+    <div class="container-fluid" style='max-width: 400px'>
+        <table class="cockpit-form-table">
+            <tr>
+                <td>Domain</td>
+                <td>
+                    <span id="current"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Deploy a Domain Controller</td>
+            </tr>
+            <tr>
+                <td>Admin password</td>
+                <td>
+                    <input class="form-control"
+                           type="password"
+                           id="admin_pw"
+                           value="">
+               </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-default btn-primary"
+                            id="change">
+                        Deploy
+                    </button>
+                </td>
+                <td><span id="feedback"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var admin_pw = $("#admin_pw");
+        var current = $("#current");
+        var feedback = $("#feedback");
+
+        $("#change").on("click", deploy_domain);
+
+        display_domain()
+    </script>
+</body>
+</html>
+

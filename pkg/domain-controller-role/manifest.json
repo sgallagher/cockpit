@@ -1,0 +1,10 @@
+{
+    "version": 0,
+
+    "tools": {
+        "timezone": {
+            "label": "Deploy Domain Controller",
+            "path": "domaincontroller.html"
+        }
+    }
+}
