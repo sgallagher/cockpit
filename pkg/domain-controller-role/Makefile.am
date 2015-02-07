@@ -9,7 +9,7 @@ dc.js: $(dc_js_PARTS)
 	$(AM_V_GEN) cat $^ > $@.tmp && mv $@.tmp $@
 
 dc.min.js: dc.js
-	$(AM_V_GEN) $(srcdir)/tools/missing $(srcdir)/tools/uglifyjs $< --mangle > @.tmp && mv $@.tmp $@
+	$(AM_V_GEN) $(srcdir)/tools/missing $(srcdir)/tools/uglifyjs $< --mangle > $@.tmp && mv $@.tmp $@
 
 dcdir = $(pkgdatadir)/domain-controller-role
 

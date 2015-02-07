@@ -18,7 +18,7 @@
  *  along with Cockpit.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var service = cockpit.dbus('org.fedoraproject.rolekit1')
+var service = cockpit.dbus('org.fedoraproject.rolekit1');
 var dcrole = service.proxy(
     'org.fedoraproject.rolekit1.role',
-    '/org/fedoraproject/rolekit1/roles/domaincontroller')
+    '/org/fedoraproject/rolekit1/roles/domaincontroller');

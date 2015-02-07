@@ -19,14 +19,14 @@
  */
 
 function deploy_domain() {
-    var settings = { "admin_password": cockpit.variant("s", admin_pw.val()) }
+    var settings = { "admin_password": cockpit.variant("s", admin_pw.val()) };
     /* TODO: use the machine's domain name for the instance name */
-    var deploy_args = [ "dc", settings ]
-    var call = dcrole.call("deploy", deploy_args)
-    call.fail(deploy_fail)
+    var deploy_args = [ "dc", settings ];
+    var call = dcrole.call("deploy", deploy_args);
+    call.fail(deploy_fail);
     feedback.empty();
 }
 
 function deploy_fail(err) {
-    feedback.text(err.message)
+    feedback.text(err.message);
 }

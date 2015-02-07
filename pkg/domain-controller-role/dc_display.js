@@ -24,19 +24,19 @@ $(dcrole).on("InstanceRemoved", display_domain);
 function display_domain() {
     dcrole.call('getInstances').done(function(instances) {
         if (!instances[0].length) {
-            current.text("No domain configured")
+            current.text("No domain configured");
         } else {
-            console.log("Instance:", instances[0][0])
             /* The domain controller can serve only one instance */
             var dcinstance = service.proxy(
                     'org.fedoraproject.rolekit1.role.instance',
-                    instances[0][0])
+                    instances[0][0]);
 
             $(dcinstance).on("changed", function() {
-                current.text(dcinstance.data['domain_name'])
-            })
+                current.text(dcinstance.data['domain_name']);
+            });
 
-            current.text(dcinstance.data['domain_name'])
+            current.text(dcinstance.data['domain_name']);
         }
-    }) // .done()
+    }); // .done()
 }
+
